@@ -34,7 +34,7 @@ int main() {
 		return 0;
 	}
 
-	printf("Please enter number of students: ");
+	printf("Please enter number of students:\n");
 	scanf(" %d", &c);
         printf("\n");
 
@@ -43,7 +43,7 @@ int main() {
 	data_input( c, s );
 	data_output( c, s );
 
-	printf("Do you want to save the data(1/0)?");
+	printf("Do you want to save the data(1/0)?\n");
 	scanf(" %d", &yn);
         printf("\n");
 	if ( yn == 1 ) {
