@@ -19,12 +19,13 @@ int main() {
 	int err = 0;
 
 	printf("Do you want to see existing student data?(1/0)\n");
-	scanf("%d", &yn);
+	scanf(" %d", &yn);
+        printf("\n");
 	if ( yn == 1 ) {
 		printf("Reading %s\n", file);
 		data = data_read( file, &c );
 		if ( !data )
-			printf("Error reading database: %m\n");
+			printf("Error reading database\n");
 		else {
 			printf("There are %d students in database:\n", c);
 			data_output( c, data );
@@ -34,7 +35,8 @@ int main() {
 	}
 
 	printf("Please enter number of students: ");
-	scanf("%d", &c);
+	scanf(" %d", &c);
+        printf("\n");
 
 	s = (struct student *)malloc( sizeof(struct student) * c );
 
@@ -42,12 +44,13 @@ int main() {
 	data_output( c, s );
 
 	printf("Do you want to save the data(1/0)?");
-	scanf("%d", &yn);
+	scanf(" %d", &yn);
+        printf("\n");
 	if ( yn == 1 ) {
 		printf("Saving data to %s ...\n", file);
 		err = data_save( c, s, file );
 		if ( err ) {
-			printf("Error saving data: %d(%m)\n", err);
+			printf("Error saving data: (%d)\n", err);
 		}
 	}
 
